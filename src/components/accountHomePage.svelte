@@ -1,6 +1,8 @@
 <script>
   import Fa from 'svelte-fa'
-  import { faMoneyBillWave, faCoins, faPersonRunning } from '@fortawesome/free-solid-svg-icons'
+  import { faMoneyBillWave, faCoins, faPersonRunning, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+  import { fade } from 'svelte/transition';
+  import AtomButton from './atomButton.svelte';
 </script>
 
 <div class="grid grid-cols-2 gap-20 mt-30 mb-20 mx-10 font-semibold text-center">
@@ -25,33 +27,21 @@
     <Fa icon={faPersonRunning} scale={1.6}/>
     <span class="text-[18px] pl-2">Quick Actions</span>
   </div>
-  <div class="grid grid-cols-3 gap-y-5 gap-x-6">
-    <button class="bg-red-700 rounded-lg py-1">
-      <span class="font-bold">Deposit $100</span>
-    </button>
-    <button class="bg-red-700 rounded-lg py-1">
-      <span class="font-bold">Deposit $1,000</span>
-    </button>
-    <button class="bg-red-700 rounded-lg py-1">
-      <span class="font-bold">Deposit $10,000</span>
-    </button>
+  <div class="grid grid-cols-3 gap-y-6 gap-x-6">
+    <AtomButton color={"red"} name={"Deposit $100"}/>
+    <AtomButton color={"red"} name={"Deposit $1,000"}/>
+    <AtomButton color={"red"} name={"Deposit $10,000"}/>
 
-    <button class="bg-green-700 rounded-lg py-1">
-      <span class="font-bold">Withdraw $100</span>
-    </button>
-    <button class="bg-green-700 rounded-lg py-1">
-      <span class="font-bold">Withdraw $1,000</span>
-    </button>
-    <button class="bg-green-700 rounded-lg py-1">
-      <span class="font-bold">Withdraw $10,000</span>
-    </button>
+    <AtomButton color={"green"} name={"Withdraw $100"}/>
+    <AtomButton color={"green"} name={"Withdraw $1,000"}/>
+    <AtomButton color={"green"} name={"Withdraw $10,000"}/>
   </div>
 
-  <div class="grid grid-cols-2 gap-x-6 mt-5">
-    <button class="bg-blue-700 rounded-lg py-1">
+  <div class="grid grid-cols-2 gap-x-6 mt-6">
+    <button class="bg-blue-700 rounded-lg py-1 hover:bg-blue-800 active:bg-blue-900 focus:outline-none focus:ring focus:ring-blue-600">
       <span class="font-bold">Transfer $10,000 from Bank to Savings</span>
     </button>
-    <button class="bg-blue-700 rounded-lg py-1">
+    <button class="bg-blue-700 rounded-lg py-1 hover:bg-blue-800 active:bg-blue-900 focus:outline-none focus:ring focus:ring-blue-600">
       <span class="font-bold">Transfer $10,000 from Savings to Bank</span>
     </button>
   </div>

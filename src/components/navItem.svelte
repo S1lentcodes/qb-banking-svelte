@@ -2,8 +2,9 @@
   import Fa from 'svelte-fa'
   import { faHome } from '@fortawesome/free-solid-svg-icons'
   export let icon = faHome;
-  export let name: string = "Account Home";
-  export let selected: string = "Account Home";
+  export let name: string = "";
+  export let selected: string = "";
+  export let selectable: boolean = true;
 
   function handleClick() {
     selected = name;
@@ -22,7 +23,7 @@
   }
 </style>
 
-<div class="p-3 nav_item rounded-lg my-1 {selected == name ? "nav_selected" : "nav_hover"}" on:click={handleClick}>
+<div class="p-3 nav_item rounded-lg my-1 {selectable ? selected == name ? "nav_selected" : "nav_hover": null}" on:click={handleClick}>
   <Fa icon={icon} class="min-w-[8%]"/>
   <span class="pl-2">{name}</span>
 </div>
