@@ -19,11 +19,11 @@
   }
 </script>
 
-<main class="min-h-screen flex">
+<main class="min-h-screen flex bg-transparent">
   <div class="my-auto mx-auto bg-dark-500 text-light-50 flex min-w-350 min-h-200 p-10 rounded-lg">
-    <nav class="flex flex-col w-1/4 pt-10 px-10">
+    <nav class="flex flex-col w-1/4 pt-10 px-5">
       <img alt="Hello"/>
-      <ul class="mt-20 font-semibold text-left">
+      <ul class="my-auto font-semibold text-left bg-dark-300 rounded-lg p-3">
         <li>
           <NavItem icon={faHome} name="Account Home" bind:selected={navSelected}/>
         </li>
@@ -43,7 +43,7 @@
           <NavItem icon={faGears} name="Account Options" bind:selected={navSelected}/>
         </li>
       </ul>
-      <div class="text-center mt-auto font-semibold">
+      <div class="text-center font-semibold">
         <NavItem icon={faRightFromBracket} name="Log Out" selectable={false}/>
       </div>
     </nav>
