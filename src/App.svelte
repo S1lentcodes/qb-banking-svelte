@@ -1,6 +1,6 @@
 <script lang="ts">
   import { faHome, faMoneyBillWave, faDollarSign, faArrowsLeftRight, faGears, faWallet, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-  import NavItem from "./components/navItem.svelte";
+  import NavItem from "./components/atoms/navItem.svelte";
   import AccountOptionsPage from "./components/accountOptionsPage.svelte";
   import DepositPage from "./components/depositPage.svelte";
   import AccountHomePage from "./components/accountHomePage.svelte";
@@ -20,8 +20,8 @@
 </script>
 
 <main class="min-h-screen flex bg-transparent">
-  <div class="my-auto mx-auto bg-dark-500 text-light-50 flex min-w-350 min-h-200 p-10 rounded-lg">
-    <nav class="flex flex-col w-1/4 pt-10 px-5">
+  <div class="p-10 my-auto mx-auto bg-dark-500 text-light-50 divide-x-4 divide-dark-900 flex min-w-350 min-h-200 rounded-lg">
+    <nav class="flex flex-col w-1/4 pr-10">
       <img alt="Hello"/>
       <ul class="my-auto font-semibold text-left bg-dark-300 rounded-lg p-3">
         <li>
@@ -44,11 +44,10 @@
         </li>
       </ul>
       <div class="text-center font-semibold">
-        <NavItem icon={faRightFromBracket} name="Log Out" selectable={false}/>
+        <NavItem icon={faRightFromBracket} name="Log Out" color={"red"} bind:selected={navSelected}/>
       </div>
     </nav>
-    <div class="divier"></div> 
-    <div class="flex-col w-3/4">
+    <div class="flex-col w-3/4 pl-10 flex">
       {#each  Object.entries(navPages) as child}
         {#if child[0] === navSelected}
           <svelte:component this={child[1]}/>
